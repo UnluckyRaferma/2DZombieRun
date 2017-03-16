@@ -1,0 +1,59 @@
+MOVIMIENTO JUGADOR
+
+using UnityEngine;
+using System.Collections;
+
+public class MovimientoJugador : MonoBehaviour
+{
+    Rigidbody rb; //Le ponemos rb de nombre por ejemplo, puede cascar si el objeto no tiene rigidbody asi que se soluciona en Start
+    //Creamos otro atributo PUBLICO
+    public float Speed = 1f; //Multiplicamos un vector por un numero (1)
+
+    // Use this for initialization
+    void Start()
+    {
+        rb = gameObject.GetComponent<Rigidbody>(); //Referencia
+    }
+
+    // Update is called once per frame
+    void FixedUpdate() //Ponemos FixedUpdate en vez de Update porque es mejor para fisicas
+    {
+        float horizontal = Input.GetAxis("Horizontal"); //Si sale subrayado color verde significa que no se esta usando
+        //Metodo estático viene especificado en la clase, se llama Input porque esa es la clase
+        float vertical = Input.GetAxis("Vertical");
+
+        //Aplicar al RigidBody
+        Vector3 fuerza = new Vector3(horizontal, 0, vertical) * Speed; //Multiplicamos por la velocidad
+        rb.AddForce(fuerza); //Debe ser un vector 3
+    }
+}
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+MOVIMIENTO CAMARA
+
+using UnityEngine;
+using System.Collections;
+
+public class MovimientoCamara : MonoBehaviour
+{
+
+    //Calculo la distancia entre camara y jugador ? una vez y luego la aplico constantemente
+    Transform player;
+    Vector3 offset; //Diferencia entre una posicion y la otra
+
+    // Use this for initialization
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform; //Referencia a la transformada del objeto con etiqueta player
+        offset = gameObject.transform.position - player.position; //Diferencia entre player y objeto
+    }
+
+    // Update is called once per frame
+    void LateUpdate() //Ponemos FixedUpdate en vez de Update porque es mejor para fisicas
+    {
+        //Actualizar posicion de la camara
+        gameObject.transform.position = player.position + offset;
+    }
+}

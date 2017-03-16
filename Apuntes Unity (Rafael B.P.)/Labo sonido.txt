@@ -1,0 +1,35 @@
+Sonido
+Audio source
+Doble click en un sonido -> Tabla con los distintos sonidos
+
+Efectos:
+Si no sabeis crear sonidos -> sfxr (baja un zip para crear sonidos sin licencia)
+openmpt
+
+Interfaz:
+GameObject -> UI -> Canvas, crea unos eventos para poder movernos por la interfaz
+Componente Canvas: 	Screen space - Overlay (Hoja 2D delante)
+		   	Screen Space - Camera (Efectos 3D)
+			World Space
+Pixel perfect: No suavizar los pixels de las cosas
+GameObject -> UI -> Panel
+Se busca una imagen y se divide en las esquinas, llaterales y centro
+Rect Transform (Para todo lo que sea de interfaz, ajustar un elemento con respecto a su padre)
+Si el menu se pone en el centro a la izquierda, con una resolucion de 16:9, para que no se corte
+cuando la resolucion sea pas pequeña ponemos el centro en el centro a la izq.
+
+GameObject -> UI -> Button
+Interactable (Permite interactuar)
+Añadir al botón la funcion de reproducir sonido
+Navegation (Relacionado con la entrada de eventos, decide que elementos de la interfaz activan que eventos)
+Navigation -> Visualizar
+Select On: Up -> A que boton se va desde el boton en el que estamos si pulsa arriba en el teclado.
+
+Es muy complicado el incluir otros idiomas porque los textos no se ajustan a los botones siempre
+
+Agenciarnos juegos xD:
+
+OFERTAS STEAM
+HUMBLE BUNDLE
+INDIEGALA
+BUNDLESTARS

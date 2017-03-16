@@ -1,0 +1,73 @@
+Animaciones 2D
+Se pueden gestionar animaciones en las que, para un game object, se pueden cambiar
+sus características en base al tiempo. También se pueden añadir eventos en las
+animaciones (cuando un enemigo muera, evento eliminar cuerpo del enemigo muerto)
+
+No se usa el animation pero esta ahí para que los juegos antiguos no exploten
+
+Avatar: Usado si el personaje es un bípedo
+
+Las carpetas en unity tienen el nombre de lo que contienen en plural
+
+67 pixels = 180 cm
+
+Intentar que todas los sprites midan lo mismo
+
+Añadir objeto 2D (sprite) o elegir un sprite y arrastrarlo directamente
+
+Se pueden crear objetos en diferentes capas -> Sprite renderer -> Sorting layer ->
+Add Sortiing Layer
+Order in layer sirve para que pinte las cosas, cuanto más bajo el número, mas cerca
+lo pinta
+Se suelen usar 3 capas para el fondo y la zona de juego
+Crear Animator Controller
+Add component -> Miscellaneous -> Animator (al muñeco)
+
+Window -> Animation
+
+Boton derecho -> Create state -> Empty
+Cmbiar nombre (walk)
+Boton derecho -> Create state -> Empty
+Cmbiar nombre (idle)
+Motion es animación
+Speed es la velocidad de la animación
+Mirror para incertir
+Boton derecho en idle -> Crear transición y unirlos dos estados
+Click izq. sobre la transición -> Condiciones (por lo general se ejecuta de forma
+automática), se pueden poner varias.
+A la derecha de layers, click en parameters -> Trigger
+Volvemos a editor de escena -> Window -> Animation -> Create en la pantalla de abajo
+o click derecho -> create -> animation
+
+Añadir puntos en la animación con doble click pero necesitas tener una propiedad
+Add property -> Sprite renderer -> Sprite
+Poner a la izq. el estado de quieto y a la derecha sprite de andar -> Play
+El último sprite debe ser como el primero para que no tenga espasmos
+
+Cada animación se puede desactivar o activar el bucle
+
+Creamos un script
+
+using UnityEngine;
+using System.Collections;
+
+[RequireComponent(typeof(Animator))]
+public class PlayerController : MonoBehaviour
+{
+    Animator anim;
+    void Start()
+    {
+        anim = gameObject.GetComponen<Animator>();
+    }
+    void Update ()
+    {
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            anim.SetTrigger(IsWalking);
+        }
+        else if (Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            anim.SetTrigger(IsWalking);
+        }
+    }
+}

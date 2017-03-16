@@ -1,0 +1,25 @@
+Seleccionar sprite (muchos)
+sprite mode -> multiple
+Sprite editor
+Seleccionar todos los sprites uno a uno o con las opciones de arriba a la derecha
+apply
+salimos y le damows a la flecha de la imagen grande
+Edit -> Proyect settings -> Sprite packer (que es ?)
+Pixels per unit
+Sprite renderer (pintar el sprite)
+Color -> 
+R - Red
+G - Green
+B - Blue
+A - Alpha
+Flip -> Simetría
+Add component -> Physics 2D -> RigidBody (Las fisicas de 3D no interactuan con 2D)
+Constraints
+Freeze position: Solo se ouede mover en un eje
+Freeze rotation: No gira
+
+Mostrar por pantalla:
+DebugLog("El codigo ha llegado hasta la parte 1" + variable);
+
+Música:
+Indie games music (Hay que cambiarlo si se va a entregar fuera de clase)

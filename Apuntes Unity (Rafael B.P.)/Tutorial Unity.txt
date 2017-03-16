@@ -1,0 +1,13 @@
+Parte de abajo gris: Añadir objetos
+Mano (Arriba a la izquierda):
+Cruz de flechas (Arriba a la izquierda): Mover objeto
+Circulo de flechas (Arriba a la izquierda): Girar objeto
+Cuadrado con flechas (Arriba a la izquierda): Escalar objeto
+Boton derecho (Pantalla) 
+Assets: Añadir objetos
+Import package: Añadir paquetes de la store (se pueden arrastrar a la caja gris de abajo
+<< Organizar los archivos en carpetas >>
+Import package ---> Custom package: Paquetes que nos han pasado
+File ---> Build Settings ---> Add Open Scenes, Platforms, Copy PDB (Para debuggear), Architecture,
+player settings (configuracion del proyecto que se aplicara en el ejecutable/empaquetado)
+Edit ---> Proyect settings

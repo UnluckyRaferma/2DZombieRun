@@ -1,0 +1,41 @@
+Devolver objeto al valor inicial:
+Al lado de position --> Rueda dentada --> Reset
+
+Escena:
+Materiales:
+Material para el suelo (plano)
+Material para el jugador (esfera)
+
+Crear esfera / Tag Player
+Crear plano / Suelo
+Add Component --> Physics --> RigidBody (Permite tener dinamismo en la física)
+Is Kinematic (Nosotros le decimos a mana la posición)
+Use gravity
+Create Physic material --> Bounciness
+Jugador --> Sphere Collider --> Añadir nuestro material fisico
+Ponemos una camara, una luz y le damos al play
+
+Carpeta Script
+C# Movimiento jugador --> Development Settings (C#).
+
+El archivo C# debe llamarse igual que la clase que aparece
+Miramos el API
+El start es para inicializar (cuando se activa) PERO SE PUEDE EJECUTAR MÁS DE UNA VEZ
+Se puede usar awake cuando se crea, la secuencia sería: Awake --> Start --> Update
+Existen 3 updates
+Update: Lo llama si el objeto sigue activo (se le permite dar tirones)
+Si quieres determinar un tiempo para su ejecución, sin tirones
+Se llama a cada frame al calcular todas las demas simulaciones
+
+Combinacion de teclas: Ctrl + K + D (Ordena el código)
+Combinacion de teclas: Ctrl + S (Guardar script)
+
+Despues de añadir la velocidad (Speed = 1f), si en el apartado del script del jugador
+pongo speed 5, da prioridad al speed 5 en vez de al speed 1 del script
+Create --> Game object --> Empty
+Create --> Game object --> 3D --> Cubo
+Arrastro en la parte izquierda el cubo y lo meto dentro del empty 
+
+Rigidbody --> Collision detection --> Continious dynamic
+Boton derecho --> Show in explorer
+Material --> Color --> Alfa (Invisible)

@@ -1,0 +1,70 @@
+Documentación de Unity
+Unity3d.com --> Conocer --> Documentación --> Scripting API
+Preguntas a comunidad
+Unity3d.com --> Comunidad
+
+Edit --> Proyect settings --> Input
+Input gestiona la entrada
+	Size: Es un array
+	Botón positivo y negativo: Para moverse en el eje
+	Boton alternativo: Otra opcion para moverse
+	Joy Num : Si la entrada se va a identificar con un unico joystick especifico o con cualquiera
+
+Edit --> Proyect settings --> Tags and layers
+	Utilizado para clasificar lo que son objetos y enemigos
+
+Edit --> Proyect settings --> Audio
+
+Edit --> Proyect settings --> Time
+	Maximum allowed: Tiempo cuando se actualiza el juego, si lo ponemos mas bajo, se actualiza mas pero necesitamos mas recursos
+
+
+Edit --> Proyect settings --> Physics
+	En la parte de abajo podemos decir que una capa no colisione con otra
+
+Edit --> Proyect settings --> Physics 2D
+	Los Gizmos generalmente no se tocan, es una representacion de los elementos del mundo (Si añadimos una camara y luego lo
+	deseleccionamos, nos muestra una camara si encima del cuadro de escena tenemos los gizmos activados)
+
+Edit --> Proyect settings --> Quality
+	Levels: Arriba indica que opciones graficas estan asignadas a cada nivel de graficos
+
+Edit --> Proyect settings --> Graphics
+	Los shaders trabajan sobre los datos de la tarjeta grafica
+	Lens Flare: Sirven para simular los puntos del sol (circulos alrededor de una luz)
+
+Edit --> Proyect settings --> Network
+	Cuantos paquetes se quieren enviar
+
+<<Debug y Login siempre se desactivan porque, estar visualizando la ejecución constantemente, cuesta bastante>>
+
+Edit --> Proyect settings --> Script Execution Order
+	Se usa para determinar cuando se activa cada cosa
+
+Edit --> Preferences --> External Tools
+
+USAR EDITOR
+Los objetos de juego son contenedores
+Debajo de Hierarchy (arriba izq) pone el nombre de la escena activa
+GameObject
+3D --> Quad: Plano con la menor cantidad de triangulo	
+Relacion objeto y objeto hijo: Todos los cambios aplicados al padre afectan al hijo (Personaje es el padre y la camara que le
+sigue es el hijo)
+Si queremos poner un gizmo, seleccionamos el objeto y le damos al cubo de colores
+<<El check box de al lado del cubo de colores siempre debe estar activado o el objeto no funciona ?>>
+La zona donde trabajamos (generalmente en 3D) es la skybox (como las paredes de una sala gigante) y podemos pintarlas como queramos
+3D --> Camara --> Clear flags (Solid Color) + Background (Negro): pintan de negro el skybox
+3D --> Camara --> Field of view: Cambia el rango de vision
+3D --> Camara --> Clipping Planes: Distancia a la que tienen que estar los objetos de la camara para que se dejen de mostrar
+(ver atraves de una pared)
+3D --> 3DObject --> Plane --> Mesh Render: Opciones de visualizacion
+En la pantalla de abajo: Click dcho. --> Create --> Folder (Texturas)
+Arrastramos aqui una foto de un terreno
+En la pantalla de abajo: Click dcho. --> Create --> Folder (Material)
+En Albedo (cuadro de la izq.) seleccionamos la foto y a la dcha. le ponemos un color
+Create --> Material
+Creamos un plano --> Mesh Renders --> Material --> Element 0 --> Material creado anteriormente
+
+Create --> Plane Material
+Para generar un material como el hielo
+Bounciness = 1: Cuando algo golpea al material, rebota sin perder energia cinetica (con la misma fuerza)
