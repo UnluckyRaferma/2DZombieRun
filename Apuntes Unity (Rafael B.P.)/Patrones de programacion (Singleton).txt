@@ -1,0 +1,166 @@
+Patrones de programacion:
+
+-SINGLETON:
+Permite no tener que utilizar instancias para usar una clase
+static permite que lo que se defina pertenezca a toda la clase.
+
+using UnityEngine
+
+public class uiManager : MonoBehaviour
+{
+	
+}
+
+void HacerCosas()
+{
+	uiManager mng = new iuManager();
+	mng.miVar = false; //Acesso sin static
+}
+
+
+
+using UnityEngine
+
+public class uiManager : MonoBehaviour
+{
+	public static bool miVar	
+}
+
+void HacerCosas()
+{
+	uiManager.miVar = false;
+	uiManager.miFun()
+}
+
+
+
+using UnityEngine
+
+public class uiManager : MonoBehaviour
+{
+	private static uiManager instance;
+
+	private uiManager()
+	{
+
+	}	
+
+	private static uiManager GetInstance()
+	{
+		if(instance == null)		
+		{
+			instance = new uiManager();
+		}
+
+		return instance;
+	}
+}
+
+void HacerCosas()
+{
+	uiManager miMng = uiManager();
+}
+
+
+
+//Trabajar con uiManager
+
+using UnityEngine
+
+public class uiManager : MonoBehaviour
+{
+	private static uiManager instance;
+
+	private uiManager()
+	{
+
+	}	
+
+	private static uiManager GetInstance()
+	{
+		if(instance == null)		
+		{
+			instance = new uiManager();
+		}
+
+		return instance;
+	}
+}
+
+void HacerCosas()
+{
+	uiManager miMng = uiManager();
+}
+
+
+
+using UnityEngine
+
+public class uiManager : MonoBehaviour
+{
+	private static uiManager instance;
+
+	private uiManager()
+	{
+
+	}	
+
+	private static uiManager GetInstance()
+	{
+		if(instance == null)		
+		{
+			instance = new uiManager();
+		}
+
+		return instance;
+	}
+	void Start()
+	{
+		instance = this;
+	}
+}
+
+void HacerCosas()
+
+
+
+using UnityEngine
+
+public class uiManager : MonoBehaviour
+{
+	#region Singleton //Esta region es lo que hace el singleton
+	private static uiManager instance;
+
+	private uiManager()
+	{
+
+	}	
+
+	private static uiManager GetInstance()
+	{
+		if(instance == null)		
+		{
+			instance = new uiManager();
+		}
+
+		return instance;
+	}
+	#endregion Singleton
+
+	public GameObject PanelPausa;
+
+	void Start()
+	{
+		instance = this;
+	}
+
+	public void Pausar()
+	{
+		PanelPausa.SetActive(true);
+	}
+}
+
+void HacerCosas()
+{
+	uiManager.GetInstance().Pausar();
+}
